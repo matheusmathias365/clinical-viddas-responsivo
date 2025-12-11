@@ -1,0 +1,144 @@
+/* Split Layout - Features Section (Restored) */
+.features-split {
+    background-color: white;
+    padding: 100px 0;
+}
+
+.split-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.split-image {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: visible;
+}
+
+.image-container img {
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* Floating Rating Card */
+.floating-rating {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 2;
+    min-width: 250px;
+}
+
+.floating-rating i {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    /* Success Green for Trust */
+}
+
+.rating-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.rating-score {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+}
+
+/* Right Side Content */
+.split-content .section-subtitle {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.split-content .section-title {
+    font-size: 2.75rem;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.checklist-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.check-item i {
+    color: #4CAF50;
+    /* Match the rating icon */
+    background: rgba(76, 175, 80, 0.1);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.check-item span {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.btn-dark {
+    background-color: var(--dark-brown);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(45, 36, 30, 0.3);
+}
+
+.btn-dark:hover {
+    background-color: #4a3b32;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(45, 36, 30, 0.4);
+}
+
+@media (max-width: 992px) {
+    .split-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .floating-rating {
+        right: 20px;
+        bottom: -20px;
+    }
+}

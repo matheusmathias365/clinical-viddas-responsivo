@@ -1,0 +1,152 @@
+/* --- Intuitive Services Grid (Restoration) --- */
+.services-intuitive {
+    background-color: #F8FAFC;
+    /* Light background for contrast */
+    padding: 80px 0;
+}
+
+.intro-text-centered {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.services-grid-intuitive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.service-card-intuitive {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card-intuitive:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(196, 172, 68, 0.15);
+    /* Blue shadow */
+    border-color: rgba(196, 172, 68, 0.2);
+}
+
+.service-card-intuitive .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #FFF9E5, #FDF4D1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #c4ac44;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.service-card-intuitive:hover .icon-wrapper {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #c4ac44, #c98e1b);
+    color: white;
+}
+
+.service-card-intuitive h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #3a2313;
+    margin-bottom: 15px;
+}
+
+.service-card-intuitive p {
+    font-size: 0.95rem;
+    color: #5d4037;
+    line-height: 1.6;
+}
+
+/* Exams Section */
+.exams-section-intuitive {
+    background: white;
+    padding: 80px 0;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.exam-pill {
+    padding: 12px 24px;
+    background: #fdfbf7;
+    color: #5d4037;
+    border-radius: 50px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.exam-pill i {
+    color: #c4ac44;
+}
+
+.exam-pill:hover {
+    background: #c4ac44;
+    color: white;
+}
+
+.exam-pill:hover i {
+    color: white;
+}
+
+/* Insurances Section */
+.insurances-section {
+    background-color: #F8FAFC;
+    padding: 80px 0;
+}
+
+.insurance-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.insurance-card {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(58, 35, 19, 0.1);
+    color: #5d4037;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.insurance-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: rgba(196, 172, 68, 0.3);
+    color: #3a2313;
+}
+
+.insurance-card i {
+    color: #c4ac44;
+    font-size: 0.8rem;
+}

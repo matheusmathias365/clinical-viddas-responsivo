@@ -1,0 +1,146 @@
+/* =========================================
+   FINAL POLISH - MATCHING SCREENSHOTS
+   ========================================= */
+
+/* --- Header Phone Button --- */
+.btn-header-phone {
+    background-color: #c4ac44;
+    /* Brighter Blue like screenshot */
+    color: white;
+    padding: 12px 28px;
+    /* Slightly larger padding */
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(196, 172, 68, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-header-phone:hover {
+    background-color: #c4ac44;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(196, 172, 68, 0.5);
+}
+
+.btn-header-phone i {
+    font-size: 1.1rem;
+    /* Slightly larger icon */
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    padding: 80px 0;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #c98e1b 0%, #3a2313 100%);
+    /* Deep Blue Gradient */
+    border-radius: 24px;
+    padding: 60px 40px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 20px 40px rgba(58, 35, 19, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Abstract circle overlay for CTA (like screenshot gradient feel) */
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+}
+
+.cta-card h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-card p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #e0e7ff;
+    /* Light Indigo Blue text */
+    position: relative;
+    z-index: 1;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-white {
+    background-color: white;
+    color: #3a2313;
+    /* Dark Blue Text */
+    padding: 14px 32px;
+    border-radius: 8px;
+    /* Slightly rounded squares */
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background-color: #f8fafc;
+    transform: translateY(-2px);
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-white:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Footer Refinements --- */
+/* The layout and colors in temp_premium.css were already very close.
+   Just ensuring the 'Atendimento' card is perfect. */
+
+.hours-card {
+    background: #172033;
+    /* Slightly darker/richer than slate-800 */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border */
+}
+
+/* Social Icons in Footer - Dark Background */
+.social-links a {
+    background: #1E293B;
+    /* Dark background */
+    color: #94A3B8;
+    /* Muted icon color */
+    border: 1px solid #334155;
+}
+
+.social-links a:hover {
+    background: #c4ac44;
+    color: white;
+    border-color: #c4ac44;
+}

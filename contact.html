@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Clínica Viddas</title>
+    <meta name="description"
+        content="Entre em contato com a Clínica Viddas. Agende sua consulta ou solicite orçamento.">
+    <link rel="icon" href="icon-viddas-square.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="logo-viddas.png" alt="Clínica Viddas" style="height: 45px;">
+            </a>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Serviços</a></li>
+                <li class="nav-item"><a href="about.html#nossa-historia" class="nav-link">Sobre Nós</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Galeria</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contato</a></li>
+                <li class="nav-item mobile-hidden" style="display: flex; gap: 10px; align-items: center;">
+                    <a href="https://api.whatsapp.com/message/YKSEU7XQLBBXF1?autoload=1&app_absent=0" target="_blank"
+                        class="btn btn-header-phone">
+                        <i class="fa-brands fa-whatsapp"></i> Agende Agora
+                    </a>
+
+                    <!-- Dropdown for Exam Results -->
+                    <div class="nav-item-dropdown">
+                        <a href="#" class="btn btn-header-outline dropdown-toggle">
+                            Retire seu Exame <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="https://ecoradpp.modernanet.com.br/AGE0000700" target="_blank"
+                                class="dropdown-item">
+                                <i class="fa-solid fa-user-injured" style="width: 20px;"></i> Portal do Paciente
+                            </a>
+                            <a href="https://entregadeexames.com.br" target="_blank" class="dropdown-item">
+                                <i class="fa-solid fa-images" style="width: 20px;"></i> Retire sua Imagem
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero contact-hero">
+        <div class="container text-center">
+            <span class="section-subtitle animate-fade-up">Fale Conosco</span>
+            <h1 class="animate-fade-up delay-100">Informações de Contato</h1>
+        </div>
+    </section>
+    </section>
+
+    <!-- Contact Info & Map -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-header text-center mb-60">
+                <span class="section-subtitle">Fale Conosco</span>
+                <h2>Entre em Contato</h2>
+                <p>Solicite seu orçamento ou tire suas dúvidas com agilidade.</p>
+            </div>
+
+            <div class="grid-2-col-contact">
+                <!-- Left: Info Panel (Dark Brown) -->
+                <div class="contact-info-panel">
+                    <h3>Informações de Contato</h3>
+
+                    <div class="info-group">
+                        <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-content">
+                            <h4>Endereço</h4>
+                            <p>Av. Manoel Hipólito do Rêgo, 2229<br>Praia do Arrastão, São Sebastião – SP<br>CEP:
+                                11605-136</p>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-content">
+                            <h4>Telefones</h4>
+                            <p>(12) 3892-1334<br>(12) 3893-2117</p>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="info-content">
+                            <h4>WhatsApp</h4>
+                            <p>(12) 99617-5560</p>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-content">
+                            <h4>E-mail</h4>
+                            <p>agendamento@clinicaviddas.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="info-group">
+                        <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-content">
+                            <h4>Horários</h4>
+                            <p>Segunda - Sexta: 08:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form Panel (White) -->
+                <div class="contact-form-panel">
+                    <h3>Envie uma Mensagem</h3>
+                    <form action="contact_process.php" method="POST">
+
+                        <div class="form-group">
+                            <label>Nome Completo</label>
+                            <input type="text" name="nome" placeholder="Seu nome" class="form-control" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" name="email" placeholder="seu@email.com" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone</label>
+                                <input type="tel" name="telefone" placeholder="(00) 00000-0000" class="form-control"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensagem</label>
+                            <textarea name="mensagem" placeholder="Como podemos ajudar?" class="form-control" rows="4"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-contact-submit">
+                            Enviar Mensagem <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1: Brand & Social -->
+                <div class="footer-col brand-col">
+                    <img src="logo-viddas-white.png" alt="Clínica Viddas" style="height: 50px; margin-bottom: 15px;">
+                    <p style="color: #ffffff;">Nossa missão é oferecer atendimento médico humanizado e de excelência,
+                        promovendo saúde e
+                        bem-estar para você e sua família com ética e inovação.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="services.html">Serviços</a></li>
+                        <li><a href="about.html">Sobre Nós</a></li>
+                        <li><a href="gallery.html">Galeria</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="https://www.linkedin.com/company/clinicaviddasmd/jobs/" target="_blank">Trabalhe
+                                Conosco</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Av. Manoel Hipólito do Rêgo, 2229 – Praia do Arrastão, São Sebastião – SP</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>(12) 3892-1334 / (12) 3893-2117</span>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>(12) 99617-5560</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>agendamento@clinicaviddas.com.br</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Hours Card -->
+                <div class="footer-col">
+                    <h4>Atendimento</h4>
+                    <div class="hours-card">
+                        <div class="hours-row">
+                            <span>Seg - Sex</span>
+                            <span>08:00 - 18:00</span>
+                        </div>
+
+                        <p class="hours-note">Atendemos diversos convênios e particulares.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clínica Viddas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- SweetAlert2 for Nice Popups -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Check URL parameters for status
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+
+        if (status === 'success') {
+            Swal.fire({
+                title: 'Sucesso!',
+                text: 'Sua mensagem foi enviada com sucesso. Entraremos em contato em breve!',
+                icon: 'success',
+                confirmButtonColor: '#c4ac44',
+                confirmButtonText: 'Ótimo!'
+            });
+            // Clean URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        } else if (status === 'error') {
+            Swal.fire({
+                title: 'Erro!',
+                text: 'Houve um problema ao enviar sua mensagem. Por favor, tennte novamente.',
+                icon: 'error',
+                confirmButtonColor: '#d33',
+                confirmButtonText: 'Fechar'
+            });
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
