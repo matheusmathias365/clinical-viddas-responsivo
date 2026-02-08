@@ -27,9 +27,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 const headerOffset = 90;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            });
 
-        // Initial simple animation setup if needed (can be expanded)
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+
+    // Scroll Animation Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-card, .reveal-text').forEach(el => {
+        observer.observe(el);
     });
 
     // NUCLEAR OPTION: FORCE VLIBRAS GOLD

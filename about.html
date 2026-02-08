@@ -30,7 +30,6 @@
                 <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Serviços</a></li>
                 <li class="nav-item"><a href="#nossa-historia" class="nav-link active">Sobre Nós</a></li>
-                <li class="nav-item"><a href="gallery.html" class="nav-link">Galeria</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contato</a></li>
                 <li class="nav-item mobile-hidden" style="display: flex; gap: 10px; align-items: center;">
                     <a href="https://api.whatsapp.com/message/YKSEU7XQLBBXF1?autoload=1&app_absent=0" target="_blank"
@@ -62,8 +61,9 @@
     <!-- Hero -->
     <section class="page-hero about-hero" id="nossa-historia">
         <div class="container text-center">
-            <h1 class="animate-fade-up">Cuidado médico completo com tecnologia avançada</h1>
-            <p class="animate-fade-up delay-100" style="max-width: 800px; margin: 0 auto;">A Clínica Viddas é o coração
+            <span class="section-subtitle animate-fade-up" style="display: block; margin-bottom: 10px;">Sobre Nós</span>
+            <h1 class="animate-fade-up delay-100">Cuidado médico completo com tecnologia avançada</h1>
+            <p class="animate-fade-up delay-200" style="max-width: 800px; margin: 0 auto;">A Clínica Viddas é o coração
                 do renomado Grupo Viddas, uma organização de saúde e bem-estar que desde 2002 atua com excelência,
                 qualidade e cuidado humanizado.</p>
         </div>
@@ -162,81 +162,75 @@
         </div>
     </section>
 
-    <!-- Structure Grid -->
+    <!-- Structure Grid (Migrated from Gallery) -->
     <section class="section-padding">
         <div class="container">
             <h2 class="section-title text-center mb-60 reveal-text">Nossa Estrutura</h2>
-            <div class="structure-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
-                <!-- Recepção -->
-                <div class="structure-card"
-                    style="display: flex; gap: 20px; background: white; border: 1px solid rgba(58, 35, 19, 0.1); border-radius: 16px; padding: 20px;">
-                    <div class="img-box"
-                        style="flex-shrink: 0; width: 120px; height: 80px; border-radius: 12px; background: rgba(58, 35, 19, 0.05); overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2653&auto=format&fit=crop"
-                            alt="Recepção" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; color: #3a2313; margin-bottom: 8px;">Recepção</h3>
-                        <p style="font-size: 0.85rem; color: #5d4037;">Nossa área de espera é cuidadosamente projetada
-                            para ser espaçosa, convidativa e equipada com assentos confortáveis, proporcionando um
-                            ambiente tranquilo enquanto você aguarda seu atendimento.</p>
+            <div class="gallery-grid-structure">
+                <!-- Image 1: Recepção -->
+                <div class="gallery-item reveal-card">
+                    <div class="gallery-image-container">
+                        <img src="gallery-recepcao.jpg" alt="Recepção Viddas Térreo"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <span>Recepção Viddas Térreo</span>
+                        </div>
                     </div>
                 </div>
-                <!-- Consultórios -->
-                <div class="structure-card"
-                    style="display: flex; gap: 20px; background: white; border: 1px solid rgba(58, 35, 19, 0.1); border-radius: 16px; padding: 20px;">
-                    <div class="img-box"
-                        style="flex-shrink: 0; width: 120px; height: 80px; border-radius: 12px; background: rgba(58, 35, 19, 0.05); overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2668&auto=format&fit=crop"
-                            alt="Consultórios" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; color: #3a2313; margin-bottom: 8px;">Consultórios</h3>
-                        <p style="font-size: 0.85rem; color: #5d4037;">Nossos consultórios são dedicados ao seu cuidado
-                            individualizado. Equipados com tecnologia de ponta, nossos consultórios proporcionam o
-                            cenário perfeito para consultas médicas personalizadas e atenciosas.</p>
+                <!-- Image 2: Sala de Exames -->
+                <div class="gallery-item reveal-card delay-100">
+                    <div class="gallery-image-container">
+                        <img src="gallery-consultorio.png" alt="Consultório"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <span>Consultório</span>
+                        </div>
                     </div>
                 </div>
-                <!-- Consultórios de Procedimentos -->
-                <div class="structure-card"
-                    style="display: flex; gap: 20px; background: white; border: 1px solid rgba(58, 35, 19, 0.1); border-radius: 16px; padding: 20px;">
-                    <div class="img-box"
-                        style="flex-shrink: 0; width: 120px; height: 80px; border-radius: 12px; background: rgba(58, 35, 19, 0.05); overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2680&auto=format&fit=crop"
-                            alt="Salas de Procedimentos" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; color: #3a2313; margin-bottom: 8px;">Consultórios de Procedimentos
-                        </h3>
-                        <p style="font-size: 0.85rem; color: #5d4037;">São espaços cuidadosamente projetados para
-                            oferecer pequenos procedimentos cirúrgicos seguros e eficientes. Nossa equipe cirúrgica
-                            altamente qualificada está comprometida em garantir sua segurança e conforto durante todo o
-                            processo.</p>
+                <!-- Image 3: Consulta -->
+                <div class="gallery-item reveal-card delay-200">
+                    <div class="gallery-image-container">
+                        <img src="gallery-area-cafe.jpg" alt="Área de Café"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <span>Área de Café</span>
+                        </div>
                     </div>
                 </div>
-                <!-- Sala de Exames -->
-                <div class="structure-card"
-                    style="display: flex; gap: 20px; background: white; border: 1px solid rgba(58, 35, 19, 0.1); border-radius: 16px; padding: 20px;">
-                    <div class="img-box"
-                        style="flex-shrink: 0; width: 120px; height: 80px; border-radius: 12px; background: rgba(58, 35, 19, 0.05); overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=2670&auto=format&fit=crop"
-                            alt="Sala de Exames" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- Image 4: Atendimento -->
+                <div class="gallery-item reveal-card">
+                    <div class="gallery-image-container">
+                        <img src="gallery-recepcao-1andar.jpg" alt="Recepção 1º Andar"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <span>Recepção 1º Andar</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3 style="font-size: 1.1rem; color: #3a2313; margin-bottom: 8px;">Sala de Exames</h3>
-                        <p style="font-size: 0.85rem; color: #5d4037;">Nos esforçamos para fornecer resultados precisos
-                            e confiáveis para apoiar sua saúde e bem-estar. Nosso compromisso com a excelência garante
-                            que cada exame seja realizado com precisão e eficiência, colocando sua saúde em boas mãos.
-                        </p>
+                </div>
+                <!-- Image 5: Equipamentos -->
+                <div class="gallery-item reveal-card delay-100">
+                    <div class="gallery-image-container">
+                        <img src="gallery-recepcao-fundos.jpg" alt="Recepção Fundos"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <span>Recepção Fundos</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image 6: Sorriso -->
+                <div class="gallery-item reveal-card delay-200">
+                    <div class="gallery-image-container">
+                        <img src="gallery-consultorio-pediatria.jpg" alt="Consultório Pediatria"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="gallery-overlay">
+                            <span>Consultório Pediatria</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    </div>
-    </div>
-    </div>
-    </div>
+
     </section>
 
     <!-- Footer -->
@@ -262,7 +256,6 @@
                         <li><a href="index.html">Início</a></li>
                         <li><a href="services.html">Serviços</a></li>
                         <li><a href="about.html">Sobre Nós</a></li>
-                        <li><a href="gallery.html">Galeria</a></li>
                         <li><a href="contact.html">Contato</a></li>
                         <li><a href="https://www.linkedin.com/company/clinicaviddasmd/jobs/" target="_blank">Trabalhe
                                 Conosco</a></li>

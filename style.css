@@ -3,30 +3,57 @@
    Color Palette: Navy #0F172A | Royal Blue #2563EB | Cyan #22D3EE | White
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-    /* Brand Colors - Clinica Viddas */
-    --primary-blue: #c4ac44;
-    /* Changed from Blue to Gold (Main Brand Color) */
-    --hover-blue: #c98e1b;
-    /* Changed from Dark Blue to Darker Gold/Bronze */
-    --dark-navy: #3a2313;
-    /* Changed from Navy to Dark Brown (Main Text/Bg) */
-    --slate-800: #5d4037;
-    /* Adjusted slate to a brownish-grey for consistency */
-    --cyan-accent: #eac844;
-    /* Changed form Cyan to Secondary Gold */
-    --bg-light: #F9FAFB;
-    /* Kept light but warm if needed, currently neutral */
-    --text-main: #3a2313;
-    /* Main text is now Dark Brown */
-    --text-light: #6d5e52;
-    /* Light text adjusted to warm grey/brown */
-    --shadow-sm: 0 2px 4px rgba(58, 35, 19, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(58, 35, 19, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(58, 35, 19, 0.1);
-    --transition: all 0.3s ease;
+    /* Clini Viddas - Design System Pro Max */
+
+    /* Brand Colors */
+    --gold-primary: #c4ac44;
+    /* Main Action / Highlight */
+    --gold-hover: #c98e1b;
+    /* Hover States */
+    --gold-light: #eac844;
+    /* Secondary / Accents */
+
+    --brown-dark: #3a2313;
+    /* Main Headings / Backgrounds */
+    --brown-light: #5d4037;
+    /* Secondary Text */
+
+    /* Neutrals */
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-800: #1f2937;
+
+    /* Text Colors */
+    --text-main: var(--brown-dark);
+    --text-body: #4b5563;
+    /* Softer readable gray */
+    --text-light: #9ca3af;
+
+    /* Shadows (Soft & Modern) */
+    --shadow-sm: 0 1px 2px 0 rgba(58, 35, 19, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(58, 35, 19, 0.1), 0 2px 4px -1px rgba(58, 35, 19, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(58, 35, 19, 0.1), 0 4px 6px -2px rgba(58, 35, 19, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(58, 35, 19, 0.1), 0 10px 10px -5px rgba(58, 35, 19, 0.04);
+
+    /* Spacing & Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* COMPATIBILITY: Legacy Blue Variables mapped to Gold/Brown Theme */
+    --primary-blue: var(--gold-primary);
+    --dark-navy: var(--brown-dark);
+    --bg-light: var(--gray-50);
+    --slate-800: var(--brown-dark);
 }
 
 * {
@@ -41,10 +68,24 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
+    color: var(--text-body);
+    background-color: var(--white);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif;
     color: var(--text-main);
-    background-color: white;
-    overflow-x: hidden;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    /* UX Polish: Tighter tracking for headings */
 }
 
 a {
@@ -65,6 +106,49 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* =========================================
+   SPACING UTILITIES (Design System)
+   ========================================= */
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
 }
 
 /* =========================================
@@ -91,13 +175,14 @@ img {
 
 .contact-info i,
 .location-check i {
-    color: var(--primary-blue);
+    color: var(--gold-primary);
     margin-right: 6px;
 }
 
 .header {
-    background: white;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     height: 90px;
     display: flex;
     align-items: center;
@@ -105,6 +190,13 @@ img {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    height: 80px;
+    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .navbar {
@@ -118,11 +210,12 @@ img {
     font-family: 'Outfit', sans-serif;
     font-size: 1.8rem;
     font-weight: 800;
-    color: #3a2313;
+    color: var(--brown-dark);
+    letter-spacing: -0.02em;
 }
 
 .logo span {
-    color: var(--primary-blue);
+    color: var(--gold-primary);
 }
 
 /* Navigation Menu */
@@ -190,11 +283,10 @@ img {
 }
 
 .nav-link {
-    color: #3a2313;
-    /* Dark text for white header */
+    color: var(--brown-dark);
     font-weight: 500;
-    transition: color 0.3s;
-    font-size: 1rem;
+    transition: var(--transition);
+    font-size: 0.95rem;
     position: relative;
     padding-bottom: 4px;
 }
@@ -206,8 +298,12 @@ img {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #c4ac44;
+    background-color: var(--gold-primary);
     transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--gold-primary);
 }
 
 .nav-link:hover::after,
@@ -216,8 +312,8 @@ img {
 }
 
 .nav-link.active {
-    color: var(--primary-blue);
-    font-weight: 700;
+    color: var(--gold-primary);
+    font-weight: 600;
 }
 
 /* Grid Utilities */
@@ -236,16 +332,17 @@ img {
 
 /* Gallery & Testimonial Page Specifics */
 .section-heading-left {
-    border-left: 4px solid #c4ac44;
-    padding-left: 16px;
-    margin-bottom: 30px;
+    border-left: 5px solid #c4ac44;
+    padding-left: 20px;
+    margin-bottom: 40px;
 }
 
 .section-heading-left h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--dark-navy);
     margin: 0;
+    letter-spacing: -0.03em;
 }
 
 .gallery-grid-structure {
@@ -279,42 +376,42 @@ img {
 
 /* Updated Phone Button Style (White Pill / Blue Text) to match model */
 .btn-header-phone {
-    background-color: #c4ac44;
+    background-color: var(--gold-primary);
     color: white;
-    /* White Text */
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
 .btn-header-phone:hover {
-    background-color: #bfa030;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+    background-color: var(--gold-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-header-outline {
     background-color: transparent;
-    color: #3a2313;
-    border: 2px solid #3a2313;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1rem;
+    color: var(--brown-dark);
+    border: 1px solid var(--brown-dark);
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
+    gap: 8px;
+    transition: var(--transition);
 }
 
 .btn-header-outline:hover {
-    background-color: #3a2313;
+    border-color: var(--gold-primary);
+    background-color: var(--gold-primary);
     color: white;
 }
 
@@ -335,49 +432,69 @@ img {
 
 /* Missing .page-hero definition added here */
 .page-hero {
-    background-color: #3a2313;
-    /* Match Brand Brown */
+    background: linear-gradient(135deg, #3a2313 0%, #4a2c17 100%);
+    /* Gradient for depth */
+    position: relative;
     color: white;
-    padding: 160px 0 100px;
-    /* Top padding accounts for fixed header */
+    padding: 100px 0 60px;
+    /* Compact padding */
     text-align: center;
+    overflow: hidden;
+}
+
+/* Texture Overlay */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4ac44' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    /* Subtle Gold Pattern */
+    opacity: 1;
+    z-index: 0;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .page-hero h1 {
     font-family: 'Outfit', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    color: white !important;
+    /* Force White override */
 }
 
 .page-hero p {
-    font-size: 1.2rem;
-    color: #94A3B8;
+    font-size: 1.1rem;
+    color: #f3f4f6;
+    /* White/Light Gray for better contrast */
     max-width: 700px;
     margin: 0 auto;
+    font-weight: 400;
 }
 
 /* =========================================
    HERO SECTION (DARK WAVE)
    ========================================= */
 .hero-wave {
-    /* Hero Image with Dark Brown Overlay (Darker for Contrast) */
-    background: linear-gradient(rgba(58, 35, 19, 0.85), rgba(58, 35, 19, 0.8)), url('hero-bg.jpg');
+    background: linear-gradient(rgba(58, 35, 19, 0.9), rgba(58, 35, 19, 0.8)), url('hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    /* Deepest Navy replaced by Brown Overlay */
     color: white;
     padding: 180px 0 320px;
-    /* Increased bottom padding for Wave */
     text-align: left;
-    /* Align left as per reference */
     display: flex;
     align-items: center;
     min-height: 90vh;
-    /* Taller Hero */
     position: relative;
-    /* Ensure context for children */
+    overflow: hidden;
 }
 
 .hero-content {
@@ -570,35 +687,108 @@ div[class*="vw-access-button"]:hover {
 .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    padding: 14px 28px;
-    border-radius: 8px;
+    padding: 12px 28px;
+    border-radius: var(--radius-full);
     font-weight: 600;
+    font-size: 1rem;
     transition: var(--transition);
     cursor: pointer;
+    border: none;
+    line-height: 1.5;
+    /* User Request: Shine effect on ALL buttons */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine Effect for ALL Buttons */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::after {
+    left: 100%;
+    transition: 0.5s;
 }
 
 .btn-primary {
-    background-color: var(--primary-blue);
+    background-color: var(--gold-primary);
     color: white;
-    border: none;
+    box-shadow: var(--shadow-md);
 }
 
+/* Removed specific shine from btn-primary as it is now global on .btn */
+
 .btn-primary:hover {
-    background-color: var(--hover-blue);
+    background-color: var(--gold-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(58, 35, 19, 0.3);
+    /* UX Polish: Lift effect */
+    box-shadow: 0 10px 20px -5px rgba(196, 172, 68, 0.4);
+    /* UX Polish: Enhanced shadow */
+}
+
+
+
+/* Missing Class found in HTML */
+/* Renamed to avoid conflicts/cache */
+.btn-coffee-brown {
+    background-color: #3a2313 !important;
+    /* Force Brand Brown */
+    color: white !important;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-coffee-brown:hover {
+    background-color: #5d4037 !important;
+    /* Force Lighter Brown */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background-color: var(--brown-dark);
+    color: white;
+    border: 1px solid var(--brown-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--brown-light);
+    border-color: var(--brown-light);
+    color: white;
 }
 
 .btn-outline-light {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    color: white;
+    border: 2px solid var(--gold-primary);
+    color: var(--gold-primary);
+    backdrop-filter: blur(4px);
 }
 
 .btn-outline-light:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
+    background: var(--gold-primary);
+    border-color: var(--gold-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-viddas-white {
+    background-color: var(--brown-dark);
+    /* Changed from White to Brown */
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-viddas-white:hover {
+    background-color: var(--brown-light);
+    transform: translateY(-2px);
 }
 
 /* Wave Divider */
@@ -644,13 +834,16 @@ div[class*="vw-access-button"]:hover {
 
 .service-card {
     background: white;
-    padding: 40px;
+    padding: 45px;
     border-radius: 16px;
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
-    /* Soft Shadow */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+    /* Softer Initial Shadow */
     transition: var(--transition);
-    border: 1px solid #F1F5F9;
+    border: 1px solid rgba(196, 172, 68, 0.1);
+    /* Subtle Gold Border */
     text-align: left;
+    position: relative;
+    top: 0;
 }
 
 .service-card:hover {
@@ -662,8 +855,8 @@ div[class*="vw-access-button"]:hover {
 .service-icon {
     width: 60px;
     height: 60px;
-    background: #EFF6FF;
-    color: var(--primary-blue);
+    background: rgba(196, 172, 68, 0.1);
+    color: var(--gold-primary);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -688,7 +881,7 @@ div[class*="vw-access-button"]:hover {
    ABOUT SECTION
    ========================================= */
 .section-padding {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .about-content {
@@ -700,7 +893,7 @@ div[class*="vw-access-button"]:hover {
 
 .section-subtitle {
     text-transform: uppercase;
-    color: var(--primary-blue);
+    color: var(--gold-primary);
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -771,8 +964,8 @@ div[class*="vw-access-button"]:hover {
 
 .floating-rating i {
     font-size: 2.5rem;
-    color: #10B981;
-    /* Success Green */
+    color: var(--gold-primary);
+    /* Gold */
 }
 
 .rating-score {
@@ -783,11 +976,13 @@ div[class*="vw-access-button"]:hover {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+    /* Larger Titles */
     font-weight: 700;
     color: var(--dark-navy);
     margin-bottom: 24px;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
 }
 
 .checklist-grid {
@@ -802,11 +997,22 @@ div[class*="vw-access-button"]:hover {
     display: flex;
     align-items: center;
     gap: 16px;
+    padding: 8px 12px;
+    /* UX Polish: Clickable area */
+    border-radius: 8px;
+    /* UX Polish: Rounded corners */
+    transition: background-color 0.2s ease;
+    /* UX Polish: Hover feedback */
+}
+
+.check-item:hover {
+    background-color: rgba(196, 172, 68, 0.05);
+    /* UX Polish: Subtle highlight */
 }
 
 .check-item i {
-    color: #10B981;
-    background: #ECFDF5;
+    color: var(--gold-primary);
+    background: rgba(196, 172, 68, 0.1);
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -911,7 +1117,7 @@ div[class*="vw-access-button"]:hover {
 }
 
 .google-rating {
-    color: #F59E0B;
+    color: var(--gold-primary);
     /* Star Color */
     font-size: 0.8rem;
 }
@@ -929,14 +1135,15 @@ div[class*="vw-access-button"]:hover {
 }
 
 .cta-card {
-    background: linear-gradient(135deg, #c4ac44 0%, #c98e1b 100%);
-    border-radius: 24px;
+    background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-light) 100%);
+    border-radius: var(--radius-lg);
     padding: 80px 40px;
     text-align: center;
     color: white;
-    box-shadow: 0 20px 50px rgba(58, 35, 19, 0.25);
+    box-shadow: var(--shadow-xl);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(196, 172, 68, 0.2);
 }
 
 .cta-card::before {
@@ -946,7 +1153,7 @@ div[class*="vw-access-button"]:hover {
     left: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(196, 172, 68, 0.15) 0%, rgba(196, 172, 68, 0) 70%);
     border-radius: 50%;
 }
 
@@ -956,13 +1163,14 @@ div[class*="vw-access-button"]:hover {
     margin-bottom: 16px;
     position: relative;
     z-index: 2;
+    color: var(--gold-primary);
 }
 
 .cta-card p {
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto 40px;
-    color: #f3e5b5;
+    color: var(--gray-200);
     position: relative;
     z-index: 2;
 }
@@ -1008,10 +1216,10 @@ div[class*="vw-access-button"]:hover {
    FOOTER (PREMIUM DARK LAYOUT)
    ========================================= */
 .footer {
-    background-color: #3a2313;
-    /* Deep Navy */
+    background-color: var(--brown-dark);
     color: white;
     padding: 80px 0 30px;
+    border-top: 4px solid var(--gold-primary);
 }
 
 .footer-grid {
@@ -1046,13 +1254,13 @@ div[class*="vw-access-button"]:hover {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: #1E293B;
-    border: 1px solid #334155;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(196, 172, 68, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #94A3B8;
+    color: var(--gold-primary);
     transition: var(--transition);
 }
 
@@ -1074,7 +1282,7 @@ div[class*="vw-access-button"]:hover {
 }
 
 .footer-links a {
-    color: #CBD5E1;
+    color: var(--gray-200);
     transition: 0.2s;
 }
 
@@ -1098,8 +1306,8 @@ div[class*="vw-access-button"]:hover {
 
 /* Hours Card (Dark) */
 .hours-card {
-    background: #1E293B;
-    border: 1px solid #334155;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(196, 172, 68, 0.2);
     padding: 20px;
     border-radius: 12px;
 }
@@ -1376,81 +1584,9 @@ div[class*="vw-access-button"]:hover {
     background-color: #c4ac44 !important;
 }
 
-/* =================================================================
-   🚨 EMERGENCY BLUE ERADICATION PROTOCOL 🚨
-   Forcefully overwriting ANY remaining blue elements to Gold/Brown
-   ================================================================= */
-
-/* 1. Global Variable Overrides (Effective immediately) */
-:root {
-    --primary-blue: #c4ac44 !important;
-    /* Gold */
-    --hover-blue: #a68b22 !important;
-    /* Darker Gold */
-    --dark-navy: #3a2313 !important;
-    /* Coffee Brown */
-    --slate-800: #2c1b0e !important;
-    /* Darkest Brown */
-}
-
-/* 2. Specific Component Overrides */
-.hours-card,
-.footer-info-box,
-.social-links a,
-.service-icon,
-.btn-primary,
-.hero-wave {
-    /* If it was blue, it's now Brown or Gold */
-}
-
-/* Force Social Links Background */
-.social-links a {
-    background-color: rgba(196, 172, 68, 0.1) !important;
-    border-color: rgba(196, 172, 68, 0.3) !important;
-    color: #c4ac44 !important;
-}
-
-.social-links a:hover {
-    background-color: #c4ac44 !important;
-    color: #3a2313 !important;
-}
-
-/* Force Hours Card / Info Boxes */
-.hours-card,
-.footer-col .hours-box {
-    background-color: #2c1b0e !important;
-    /* Dark Coffee */
-    border-color: rgba(196, 172, 68, 0.2) !important;
-}
-
-/* Force Service Icons */
-.service-icon {
-    background-color: rgba(196, 172, 68, 0.1) !important;
-    color: #c4ac44 !important;
-}
-
-/* Force Blue Buttons */
-.btn-primary {
-    background-color: #c4ac44 !important;
-    border-color: #c4ac44 !important;
-}
-
-.btn-primary:hover {
-    background-color: #a68b22 !important;
-}
-
-/* Any element with 'blue' classes */
-.bg-blue-600,
-.bg-blue-500,
-.bg-primary {
-    background-color: #c4ac44 !important;
-}
-
-.bg-slate-900,
-.bg-gray-900,
-.bg-navy {
-    background-color: #3a2313 !important;
-}
+/* =========================================
+   ADDITIONAL UTILITIES
+   ========================================= */
 
 /* Added for Hero Outline Button */
 .btn-viddas-white {
@@ -1639,6 +1775,162 @@ div[class*="vw-access-button"]:hover {
     opacity: 0.8;
 }
 
+/* =========================================
+   INSURANCES CAROUSEL
+   ========================================= */
+.insurances-carousel-section {
+    padding: 60px 0;
+    background-color: #fafbfc;
+    overflow: hidden;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Google Review Cards */
+.google-review-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    min-width: 300px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* UX Polish: Smooth transition */
+}
+
+.google-review-card:hover {
+    transform: translateY(-4px);
+    /* UX Polish: Lift effect */
+    box-shadow: 0 12px 24px rgba(58, 35, 19, 0.1);
+    /* UX Polish: Deep shadow */
+    border-color: rgba(196, 172, 68, 0.3);
+    /* UX Polish: Subtle Gold border */
+}
+
+.google-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.carousel-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    right: 0;
+    background: linear-gradient(to left, #fafbfc, transparent);
+}
+
+.carousel-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    left: 0;
+    background: linear-gradient(to right, #fafbfc, transparent);
+}
+
+/* Carousel Track */
+.carousel-track {
+    display: flex;
+    gap: 80px;
+    /* Increased gap for premium feel */
+    align-items: center;
+    width: max-content;
+    animation: scroll-logos 80s linear infinite;
+    /* Slower animation (was 40s) */
+}
+
+/* Carousel Item Container */
+.carousel-item {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo Images */
+.carousel-item img {
+    max-width: 100%;
+    max-height: 80px;
+    /* Limit height within container */
+    width: auto;
+    filter: grayscale(100%);
+    /* Grayscale by default */
+    opacity: 0.5;
+    /* Muted look */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Smooth transition */
+    cursor: pointer;
+    object-fit: contain;
+}
+
+/* Hover Effects */
+.carousel-item:hover img {
+    filter: none;
+    /* Restore color */
+    opacity: 1;
+    /* Full visibility */
+    transform: scale(1.1);
+    /* Subtle zoom */
+}
+
+/* Specific Fix for Oplan Logo (White/Blue) */
+.carousel-item img[alt="Oplan"] {
+    background-color: #002147;
+    /* Dark Navy Blue background (Brand Color) */
+    padding: 10px;
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+/* Styled Text Logo for Missing Images */
+.partner-text-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #cbd5e1;
+    /* Slate-300 (Placeholder Gray) */
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.partner-text-logo:hover {
+    color: var(--gold-primary);
+    transform: scale(1.05);
+}
+
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move half the total width (since list is duplicated) */
+        transform: translateX(-50%);
+    }
+}
+
 /* Responsive */
 @media (max-width: 991px) {
     .testimonials-mosaic {
@@ -1652,6 +1944,51 @@ div[class*="vw-access-button"]:hover {
 }
 
 /* =========================================
+   ANIMATIONS & INTERACTIONS
+   ========================================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-card,
+.reveal-text,
+.animate-fade-up {
+    /* Animation Disabled for Stability - User Request */
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.reveal-card.active,
+.reveal-text.active,
+.animate-fade-up.active {
+    opacity: 1;
+    transform: none;
+}
+
+/* Stagger delays */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+
+/* =========================================
    RESPONSIVE STYLES
    ========================================= */
 
@@ -1661,14 +1998,138 @@ div[class*="vw-access-button"]:hover {
         left: -100%;
         top: 90px;
         /* Header height */
+        display: flex !important;
+        /* Ensure it's not hidden */
         flex-direction: column;
         background-color: white;
         width: 100%;
+        height: calc(100vh - 90px);
+        /* Full height */
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-        gap: 20px;
+        padding: 40px 20px;
+        gap: 30px;
+        z-index: 9999;
+    }
+
+    /* =========================================
+   GOOGLE REVIEWS STYLES
+   ========================================= */
+    .google-reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .google-review-card {
+        background: white;
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f3f4;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .google-review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .google-review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        position: relative;
+    }
+
+    .reviewer-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+    }
+
+    .reviewer-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reviewer-name {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #202124;
+    }
+
+    .review-date {
+        font-size: 0.8rem;
+        color: #70757a;
+    }
+
+    .google-icon-tiny {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .star-rating {
+        margin-bottom: 12px;
+    }
+
+    .star-rating .text-warning {
+        color: #fbbc04;
+        /* Google Star Color */
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+
+    .review-text {
+        font-size: 0.95rem;
+        color: #4d5156;
+        line-height: 1.6;
+        font-style: italic;
+        flex-grow: 1;
+        /* Pushes content to fill height */
+    }
+
+    /* Google CTA Button */
+    .mt-50 {
+        margin-top: 50px;
+    }
+
+    .btn-outline-google {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 30px;
+        background-color: white;
+        border: 1px solid #dadce0;
+        color: #3c4043;
+        font-weight: 500;
+        border-radius: 24px;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .btn-outline-google:hover {
+        background-color: #f8f9fa;
+        border-color: #d2e3fc;
+        color: #1a73e8;
+        box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3);
+    }
+
+    /* Responsive for Reviews */
+    @media (max-width: 991px) {
+        .google-reviews-grid {
+            grid-template-columns: 1fr;
+            /* Stack on mobile */
+            gap: 20px;
+        }
     }
 
     .navbar .nav-menu.active {
